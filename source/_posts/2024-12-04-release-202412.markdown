@@ -570,6 +570,18 @@ it.
 
 {% enddetails %}
 
+{% details "Plugwise" %}
+
+For the Plugwise Adam, all device-based climate entities will be replaced by new zone-based climate entities, which will most likely have different entity names.
+This change aligns with the Plugwise App's representation of climate entities as zones (as discovered in Issue [#130597](https://github.com/home-assistant/core/issues/130597)).
+
+ ([@bouwew] - [#131659]) ([documentation](/integrations/plugwise))
+
+ [@bouwew]: https://github.com/bouwew
+ [#131659]: https://github.com/home-assistant/core/pull/131659
+
+ {% enddetails %}
+
 {% details "QNAP" %}
 
 The QNAP sensors will no longer have the following extra state attributes:
