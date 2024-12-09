@@ -57,7 +57,7 @@ description:
 domain:
   description: >
     The domain in which this blueprint is used. Currently, only
-    [`automation`](/docs/automation/yaml/), `script` and [`template`](/docs/integrations/template/#using-blueprints) are supported.
+    [`automation`](/docs/automation/yaml/), `script` and [`template`](/integrations/template/#using-blueprints) are supported.
   type: string
   required: true
 author:
