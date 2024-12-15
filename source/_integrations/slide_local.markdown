@@ -53,6 +53,10 @@ password:
 
 Your slide device will appear as cover.
 
+### Button
+
+You can start the calibration sequence for your slide by pushing on the Calibration button.
+
 ## Data updates
 
 The integration fetches data from the device every 15 seconds.
