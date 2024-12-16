@@ -15,23 +15,42 @@ ha_platforms:
 ha_integration_type: integration
 ---
 
-The HEOS integration adds support for a [HEOS](https://www.denon.com/en-gb/category/heos/) System in Home Assistant.
+The HEOS {% term integration %} is used to connect a [HEOS](https://www.denon.com/en-gb/category/heos/) System to Home Assistant. HEOS is a wireless audio ecosystem
+that allows you to stream music to HEOS Built-in products from [Denon](https://www.denon.com/en-us/category/heos/) and [Marantz](https://www.marantz.com/en/world-of-marantz/heos-built-in.html).
+
+Add this integration to automate playback and group configuration of HEOS-capable products. For example, when a scene is activated, set the volume and play a specific Playlist on your receiver.
 
 ## Supported functionality
 
 - [Media Player](/integrations/media_player) {% term entities %} for each HEOS-capable product, including speakers, amps, and receivers (Denon and Marantz)
 - Viewing the currently playing media
-- Controlling play mode (i.e. play/pause), volume, mute, and shuffle
+- Controlling play mode (e.g., play/pause), volume, mute, and shuffle
 - Playing HEOS favorites, playlists, quick selects, URLs
-- Setting the source to physical inputs (i.e. `AUX1`)
+- Setting the source to physical inputs (e.g., `AUX1`)
 - Grouping and ungrouping HEOS devices
 - Clearing playlists
+
+## Prerequisites
+
+1. One or more [HEOS-capable products](/integrations/heos#supported-devices).
+2. Optionally, a [HEOS Account](https://support.denon.com/app/answers/detail/a_id/17041) to access music services, playlists, and favorites.
 
 {% include integrations/config_flow.md %}
 
 {% note %}
-This integration only connects to a single {% term host %} to access the entire HEOS System on the network. Select, or enter a host, that is connected to the LAN via wire or has the strongest wireless signal.
+Only a single instance of the integration is needed to access the entire HEOS system on the network. It will only connect to a single {% term host %}.
 {% endnote %}
+
+{% configuration_basic %}
+Host:
+    description: "The hostname or IP address (e.g., \"192.168.1.2\") of your HEOS device. If you have more than one device, select, or enter a host, that is connected to the LAN via wire or has the strongest wireless signal."
+{% endconfiguration_basic %}
+
+## Removing the integration
+
+This integration follows standard integration removal. No extra steps are required.
+
+{% include integrations/remove_device_service.md %}
 
 ## Playing media
 
@@ -51,7 +70,7 @@ data:
 | ---------------------- | -------- | ------------------------------------------------------------------- |
 | `entity_id`            | yes      | `entity_id` of the player(s)                                        |
 | `media_content_type`   | no       | Set to the value `favorite`                                         |
-| `media_content_id`     | no       | (i.e., `1`) or name (i.e., `Thumbprint Radio`) of the HEOS favorite |
+| `media_content_id`     | no       | (e.g., `1`) or name (e.g., `Thumbprint Radio`) of the HEOS favorite |
 
 ### Play a playlist
 
@@ -87,7 +106,7 @@ data:
 | ---------------------- | -------- | -------------------------------------------------------------------- |
 | `entity_id`            | yes      | `entity_id` of the player(s)                                         |
 | `media_content_type`   | no       | Set to the value `quick_select`                                      |
-| `media_content_id`     | no       | The quick select number (i.e., `1`) or name (i.e., `Quick Select 1`) |
+| `media_content_id`     | no       | The quick select number (e.g., `1`) or name (e.g., `Quick Select 1`) |
 
 ### Play a URL
 
@@ -190,6 +209,21 @@ action: heos.sign_out
 data: {% raw %}{}{% endraw %}
 ```
 
+## Supported devices
+
+Denon and Marantz do not currently publish an inventory of HEOS-enabled devices, however, many receiver and hi-fi products began including HEOS since 2013. Consult your product model to confirm support:
+
+- Denon [online manuals](https://www.denon.com/en-us/online-manuals.html) and [product archive](https://www.denon.com/en-us/support/product-archive/)
+- Marantz [online manuals](https://www.marantz.com/en-us/support/online-manuals.html) and [product archive](https://www.marantz.com/en-us/category/archive/)
+
+## Unsupported devices
+
+Denon and Marantz products before 2013 and non-network connected products (e.g., turntables and some CD players) do not support HEOS.
+
+## Data updates
+
+HEOS pushes data to Home Assistant via the local network when data and entity states change in real-time.
+
 ## Known limitations
 
 - AVR receiver features, such as zone selection/control and power on/off, cannot be controlled through this integration. Use the [Universal Media Player](/integrations/universal/#denon-avr--heos) to combine AVR receiver functionality with this integration.
@@ -198,21 +232,17 @@ data: {% raw %}{}{% endraw %}
 
 ## Troubleshooting
 
-### Debugging
+### Missing favorites
 
-The HEOS integration will log additional information about commands, events, and other messages when the log level is set to `debug`. Add the relevant line below to the {% term "`configuration.yaml`" %} to enable debug logging:
+#### Symptom: "IP_ADDRESS is not logged in to a HEOS account and will be unable to retrieve HEOS favorites..."
 
-```yaml
-logger:
-  default: info
-  logs:
-    homeassistant.components.heos: debug
-    pyheos: debug
-```
+The message above is logged and the `source_list` attribute of the integration's media_player entities are empty. Attempting call the `media_player.play_media` action
+for `favorite` and `playlist` will fail.
 
-### Missing Favorites
+##### Description
 
-If the HEOS controller is not signed in to a HEOS account, HEOS favorites will not be populated in the media player source selection and the `media_player.play_media` action for `favorite` and `playlist` will fail. Additionally, the following warning will be logged at startup:
-> IP_ADDRESS is not logged in to a HEOS account and will be unable to retrieve HEOS favorites: Use the 'heos.sign_in' action to sign-in to a HEOS account
+The HEOS system is not logged in to a HEOS account. This occurs when the integration is first added, the HEOS account has changed (e.g. password reset), and sometimes after a firmware update.
 
-To resolve this issue, use the `heos.sign_in` action to sign the controller into an account as documented above. This only needs to be performed once, as the controller will remain signed in while the account credentials are valid.
+##### Resolution
+
+Use the [heos.sign_in action](/integrations/heos#action-heossign_in) to sign the HEOS system into a HEOS account. This only needs to be performed once, as the system will remain signed in while the account credentials are valid.
