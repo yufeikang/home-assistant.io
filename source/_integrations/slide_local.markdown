@@ -60,6 +60,10 @@ Your slide device will appear as cover.
 
 You can start the calibration sequence for your slide by pushing on the Calibration button.
 
+### Switch
+
+You can enable/disable the Touch&Go functionality (open/close cover by a short pull on the cover) by using the TouchGo switch.
+
 ## Data updates
 
 The integration fetches data from the device every 15 seconds.
