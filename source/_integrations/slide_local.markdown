@@ -43,6 +43,13 @@ password:
   description: The device code of your Slide (inside of your Slide or in the box, 8 characters). Only required for API 1, with API 2 you can fill in anything here.
 {% endconfiguration_basic %}
 
+{% include integrations/option_flow.md %}
+
+{% configuration_basic %}
+Invert position:
+  description: Check the box, if your cover uses inverted positions for open and closed.
+{% endconfiguration_basic %}
+
 ## Supported functionality
 
 ### Cover
