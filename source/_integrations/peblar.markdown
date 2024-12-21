@@ -12,6 +12,7 @@ ha_codeowners:
 ha_domain: peblar
 ha_platforms:
   - sensor
+  - update
 ha_integration_type: device
 ---
 
