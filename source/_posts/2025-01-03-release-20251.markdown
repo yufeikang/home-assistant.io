@@ -135,8 +135,8 @@ could be skipped.
 
 As of this release, we've prioritized the security of your backups and have
 replaced the optional password with a mandatory encryption key. This key is
-required to restore your backups, and it is essential to keep it safe and
-ensure your privacy is protected.
+required to restore your ([AES-128] encrypted) backups, and it is essential to
+keep it safe and ensure your privacy is protected.
 
 <img class="no-shadow" alt="The new backup overview page shows you exactly when your last backup took place" src="/images/blog/2025-01/temp-backup-encryption-key.png" />
 
@@ -146,11 +146,13 @@ need it to restore your backups. To make this easier, you can download the
 encryption key as an emergency kit directly when you set up your backups,
 but you can also download it at any time from the backup settings page.
 
+[AES-128]: https://nl.wikipedia.org/wiki/Advanced_Encryption_Standard
+
 ### Home Assistant Cloud backups 😎
 
 Are you a Home Assistant Cloud by Nabu Casa subscriber? Then you're in for a
 treat! You can now store your latest encrypted backup in your Home Assistant
-Cloud account storage.
+Cloud account storage up to 5GB!
 
 **This feature is added to all existing and new Home Assistant Cloud
 subscribers without any additional costs! 🎁**
@@ -164,6 +166,10 @@ have a safe backup available.
 The backup can be downloaded from Home Assistant itself, but also from the
 Home Assistant Cloud account page @ Nabu Casa in case you need it.
 
+Again, make sure to keep your encryption key safe, as you will need it to
+restore your backups. The encryption key is not stored anywhere else, not even
+in Home Assistant Cloud, to ensure your privacy is protected.
+
 ### Backup locations are extendable by design 🧩
 
 So, automated backup can be backed up to your local disk to Home Assistant
@@ -174,10 +180,10 @@ possible without any vendor lock-in. Therefore, the backup system is designed
 to be extendable, meaning integrations can now provide additional backup
 locations.
 
-Right now, everything is brand new ✨ no integrations provide this yet, but
+Right now, everything is brand new ✨ **no integrations provide this yet**, but
 we are sure we see more integrations providing backup locations in the future.
-For example, an integration could provide a backup location to store backups on
-a NAS, Google Drive, Backblaze S2, or any other storage provider.
+Integration could provide a backup location to store backups on a, for example,
+a NAS, Google Drive, Backblaze B2, or any other storage provider.
 
 Choice is an important aspect of Home Assistant, and this is how we have made
 that aspect count for the backup system as well.
