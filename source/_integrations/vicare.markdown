@@ -165,12 +165,6 @@ Sets the target temperature of domestic hot water to the given temperature.
 | `entity_id` | yes | String or list of strings that point at `entity_id`'s of climate devices to control. |
 | `temperature` | no | New target temperature for water heater. |
 
-## Removing the integration
-
-This integration follows standard integration removal, once the integration is removed, you can remove the API client (assuming it was only used by this integration) by going to the [Viessmann developer portal](https://app.developer.viessmann.com/) and deleting the client you created for Home Assistant.
-
-{% include integrations/remove_device_service.md %}
-
 ## Troubleshooting
 
 ### UTF-8 characters in passwords
@@ -196,3 +190,9 @@ Invalid data from Vicare server: {
 ```
 
 Usually, this resolves itself after a while, but if this state persists, try to power cycle your gateway.
+
+## Removing the integration
+
+This integration follows standard integration removal, once the integration is removed, you can remove the API client (assuming it was only used by this integration) by going to the [Viessmann developer portal](https://app.developer.viessmann.com/) and deleting the client you created for Home Assistant.
+
+{% include integrations/remove_device_service.md %}
