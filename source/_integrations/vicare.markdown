@@ -167,7 +167,7 @@ Sets the target temperature of domestic hot water to the given temperature.
 
 ## Removing the integration
 
-This integration follows standard integration removal, once the integration is removed you can remove the API client (assuming it was only used by this integration) by going to the [Viessmann developer portal](https://app.developer.viessmann.com/) and deleting the client you created for Home Assistant.
+This integration follows standard integration removal, once the integration is removed, you can remove the API client (assuming it was only used by this integration) by going to the [Viessmann developer portal](https://app.developer.viessmann.com/) and deleting the client you created for Home Assistant.
 
 {% include integrations/remove_device_service.md %}
 
