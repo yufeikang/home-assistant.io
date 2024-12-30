@@ -7,6 +7,7 @@ ha_category:
   - Update
   - Binary sensor
   - Select
+  - Button
   - Switch
 ha_iot_class: Local Polling
 ha_release: 2024.8
@@ -21,6 +22,7 @@ ha_platforms:
   - update
   - binary_sensor
   - select
+  - button
   - switch
 ---
 
@@ -132,6 +134,11 @@ These settings are intended for technically experienced users and require carefu
 - **Voltage divider:** Fine-tunes the measured voltage to account for variations in the voltage sense resistors between units.
 - **Calibration offset:** Adjusts the calibration of the thermocouple measurements, which determine the temperature displayed for the tip.
 - **Calibrate CJC (Cold Junction Compensation):** Initiates thermocouple calibration at the next boot to improve temperature accuracy. Only needed if temperature readings are consistently inaccurate. Ensure the device is at room temperature before calibrating. For more details, see the [documentation](https://ralim.github.io/IronOS/Settings/#setting-calibrate-cjc-at-next-boot).
+
+### Save & restore
+
+- **Save settings:** Saves the current configuration to apply it permanently. Use this after making changes to ensure they persist across device reboots.
+- **Restore default settings:** Resets all configuration options to their factory defaults. Note: This action cannot be undone, and all custom settings will be lost. To preserve custom settings, create a {% term scene %} before restoring defaults.
 
 ## Automations
 
