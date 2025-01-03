@@ -2,7 +2,7 @@
 layout: post
 title: "2025.1: Beta release notes"
 description: "Beta release notes for Home Assistant 2025.1"
-date: 2024-12-23 00:00:00
+date: 2025-01-03 00:00:00
 date_formatted: "January 3, 2025"
 author: Franck Nijhof
 author_twitter: frenck
@@ -69,23 +69,31 @@ Don't forget to [join our release party live stream on YouTube](https://www.yout
 
 Home Assistant 2025.1! 🥂
 
-Enjoy the (beta) release!
+Happy New Year! I and the whole team wish you and your loved ones a fantastic
+and healthy 2025! ❤️
+
+This year is starting with a bang! 
+
+Enjoy the release!
 
 ../Frenck
 
 <!--more-->
 
-- [Better backups!](#better-backups)
+- [Overhaul of the backup system](#overhaul-of-the-backup-system)
   - [Automated backups 🤖](#automated-backups-)
-  - [Encrypted backups by default 🔒](#encrypted-backups-by-default-)
+  - [Triggering an off-schedule automated backup](#triggering-an-off-schedule-automated-backup)
   - [Home Assistant Cloud backups 😎](#home-assistant-cloud-backups-)
   - [Backup locations are extendable by design 🧩](#backup-locations-are-extendable-by-design-)
+  - [Encrypted backups by default 🔒](#encrypted-backups-by-default-)
+  - [Restoring backups available to all installation methods 🤗](#restoring-backups-available-to-all-installation-methods-)
   - [Backup retention 🗑](#backup-retention-)
   - [Setting up backups for the first time 🚀](#setting-up-backups-for-the-first-time-)
+  - [Time to get serious about backups](#time-to-get-serious-about-backups)
 - [Month of "What the Heck?!"](#month-of-what-the-heck)
   - [Setting category and labels when creating automations and scripts](#setting-category-and-labels-when-creating-automations-and-scripts)
   - [Quickly navigate to a device](#quickly-navigate-to-a-device)
-- [Zooom \& Pan for charts](#zooom--pan-for-charts)
+  - [Zoom \& Pan for charts](#zoom--pan-for-charts)
   - [Controlling the default exposure of new entities to Assist](#controlling-the-default-exposure-of-new-entities-to-assist)
   - [Reordering individual devices on the energy dashboard](#reordering-individual-devices-on-the-energy-dashboard)
   - [More "What the Heck?!" improvements](#more-what-the-heck-improvements)
@@ -101,114 +109,190 @@ Enjoy the (beta) release!
 - [Backward-incompatible changes](#backward-incompatible-changes)
 - [All changes](#all-changes)
 
-## Better backups!
+## Overhaul of the backup system
 
-This release brings big updates to the backup system in Home Assistant. We have
-fully revamped the whole backup experience and added a lot of new features to
-make it easier to use, but more importantly, it will provide you with a lot
-more ease of mind when it comes to your backups.
+Let’s talk about backups. Let’s be honest: they’re one of the most important yet
+often overlooked tasks. But when disaster strikes, like a hardware failure,
+having a reliable backup can save the day. You would love to have your home back
+up and running quickly after such an event, right?
+
+While Home Assistant's previous backup system has proven to be solid
+and reliable over the years, it didn't exactly make following best
+practices—like regular backups, encryption, and off-site
+storage—easy. Many of you had to rely on custom add-ons, automations,
+or blueprints for backups to fill the gaps.
+
+**That changes with this release! 🎉**
+
+We've completely reworked the Home Assistant backup experience to help you set
+up a solid backup strategy, using best practices in just a few clicks;
+giving you a peace of mind when it comes to your backups.
+
+No worries, if you are using any custom solution for backups, they will continue
+to work today. Even with everything new, we've made sure to keep everything
+backward compatible.
 
 So, without further ado, let's dive into the new backup system!
 
 ### Automated backups 🤖
 
-Yes! You've read that title correctly! Home Assistant now has the ability to
-automatically create backups for you on a configurable frequency!
+Yes, you read that right—Home Assistant now supports automated backups!
 
-This is a major improvement for the backup system, as it will now ensure you
-always have a recent backup available, without you having to worry about it.
+Using a schedule, backups will be created on a regular basis without you having
+to lift a finger. This ensures you always have a recent backup available,
+without having to worry about it.
 
-<img class="no-shadow" alt="The new backup overview page shows you exactly when your last backup took place" src="/images/blog/2025-01/temp-backup-window.png" />
+<img class="no-shadow" alt="Screenshot showing the bew backup overview page which shows you exactly when your last backup took place" src="/images/blog/2025-01/backups-status.png" />
 
-When you now navigate to your backups in the setting screen, you will be
+When you navigate to your backups in the settings menu, you will be
 greeted with a new overview page that shows you exactly when your last backup
-took place, and when the next one is scheduled. Instant peace of mind!
+took place and when the next one is scheduled. Instant peace of mind!
 
-That said, if anything does go wrong while creating a backup, Home Assistant
-will raise an issue in the repair center to ensure you are aware of it.
+Automated backups are taking place at 4:45 AM. So, while everyone in your home
+is sleeping, Home Assistant makes sure your data is safe and sound. At this
+time, Home Assistant also finished internal database maintenance, ensuring your
+backup is as compact as possible.
 
-### Encrypted backups by default 🔒
+If something ever goes wrong during the automated scheduled backup process,
+Home Assistant will notify you through the repair center, ensuring you are
+aware of it and can take action.
 
-All backups are now encrypted by default. Previously, it was possible to
-optionally set a password for your backups. However, this was not enforced and
-could be skipped.
+### Triggering an off-schedule automated backup
 
-As of this release, we've prioritized the security of your backups and have
-replaced the optional password with a mandatory encryption key. This key is
-required to restore your ([AES-128] encrypted) backups, and it is essential to
-keep it safe and ensure your privacy is protected.
+Automated backups on a schedule are great, but sometimes, you might want to
+trigger a backup right now! Maybe you are about to make big changes or upgrade
+a whole bunch of things during an evening of tinkering.
 
-<img class="no-shadow" alt="The new backup overview page shows you exactly when your last backup took place" src="/images/blog/2025-01/temp-backup-encryption-key.png" />
+No worries! You can now trigger an off-schedule automated backup from the backup
+page at any time. This will immediately create a backup with the same
+configuration as your scheduled automated backups.
 
-The first time when you set up your backups, and encryption key will be
-generated for you. Make sure to store this key in a safe place, as you will
-need it to restore your backups. To make this easier, you can download the
-encryption key as an emergency kit directly when you set up your backups,
-but you can also download it at any time from the backup settings page.
+<img class="no-shadow" alt="Screenshot showing the backup now button + dialog that allows you to trigger an off-schedule backup at any time" src="/images/blog/2025-01/backups-backup-now.png" />
 
-[AES-128]: https://nl.wikipedia.org/wiki/Advanced_Encryption_Standard
+The ability to trigger an off-schedule regular backup is excellent, as it covers
+everything you have in a single go. However, the ability to create manual
+backups also still exists. This allows you to create a very specific backup with
+the exact contents you want to have in it.
 
 ### Home Assistant Cloud backups 😎
 
 Are you a Home Assistant Cloud by Nabu Casa subscriber? Then you're in for a
-treat! You can now store your latest encrypted backup in your Home Assistant
-Cloud account storage up to 5GB!
+treat! You can now automatically store your latest, fully encrypted, backup in
+your Home Assistant Cloud account.
 
-**This feature is added to all existing and new Home Assistant Cloud
-subscribers without any additional costs! 🎁**
+**This feature provides 5GB of storage at no extra cost, offering fully
+encrypted off-site protection for your data! 🎁**
 
-<img class="no-shadow" alt="Home Assistant Cloud is now a backup target location, that is included with the Home Assistant Cloud subscription" src="/images/blog/2025-01/temp-backup-home-assistant-cloud.png" />
-
-So not only, are your backups automatically created and encrypted, but also
-automatically uploaded to an off-site location for you, ensuring you always
-have a safe backup available.
+<img class="no-shadow" alt="Home Assistant Cloud is now a backup target location, that is included with the Home Assistant Cloud subscription at no additional costs" src="/images/blog/2025-01/backups-home-assistant-cloud.png" />
 
 The backup can be downloaded from Home Assistant itself, but also from the
-Home Assistant Cloud account page @ Nabu Casa in case you need it.
-
-Again, make sure to keep your encryption key safe, as you will need it to
-restore your backups. The encryption key is not stored anywhere else, not even
-in Home Assistant Cloud, to ensure your privacy is protected.
+Home Assistant Cloud account page @ Nabu Casa in case you need it. This way,
+you can always access your latest backup, even in case you Home Assistant
+hardware failed completely.
 
 ### Backup locations are extendable by design 🧩
 
 So, automated backup can be backed up to your local disk to Home Assistant
 Cloud, but what if you want to store your backups somewhere else?
 
-As one expects from Home Assistant, we want to make everything as flexible as
-possible without any vendor lock-in. Therefore, the backup system is designed
-to be extendable, meaning integrations can now provide additional backup
-locations.
+Choice is an important aspect of Home Assistant; we want to make everything as
+flexible as possible without vendor lock-in. Therefore, the backup system
+is designed to be **extendable**.
 
-Right now, everything is brand new ✨ **no integrations provide this yet**, but
-we are sure we see more integrations providing backup locations in the future.
-Integration could provide a backup location to store backups on a, for example,
-a NAS, Google Drive, Backblaze B2, or any other storage provider.
+This means **integrations** can offer new storage locations—such as NAS devices,
+Google Drive, Backblaze B2, or other storage providers—in the future.
 
-Choice is an important aspect of Home Assistant, and this is how we have made
-that aspect count for the backup system as well.
+<img class="no-shadow" alt="Screenshot showing an potential example storage provider provided by an integration" src="/images/blog/2025-01/backups-integration-location.png" />
+
+Currently, this feature is brand new ✨, so **no** integrations offer additional
+location yet. But we are sure we see a few more integrations providing
+backup locations in the next release.
+
+This extensibility ensures you can store your backups where you want them,
+giving you the flexibility and choice to choose the storage solution you
+prefer and trust.
+
+### Encrypted backups by default 🔒
+
+With the addition of Home Assistant Cloud as an off-site backup location, and
+the potential for integrations to offer even more (off-site) backup locations,
+security has become more important than ever. Noone should be able to access
+the contents of your backups! **Ever!**
+
+That is why all backups are now encrypted by default. We have prioritized your
+backups' security and replaced the previous optional password with a mandatory
+encryption key.
+
+This key is required to restore your ([AES-128] encrypted) backups, and it is
+essential to keep it safe and ensure your privacy is protected.
+
+<img class="no-shadow" alt="The new backup overview page shows you exactly when your last backup took place" src="/images/blog/2025-01/backups-encryption.png" />
+
+When you set up your backups for the first time, an encryption key will be
+generated for you. Make sure to store this key in a safe place, as you will need
+it to restore your backups. To make this easier, you can download the key as
+part of an emergency kit during setup—or anytime later from the backup settings
+page. Keep it safe! 🔑
+
+[AES-128]: https://nl.wikipedia.org/wiki/Advanced_Encryption_Standard
+
+### Restoring backups available to all installation methods 🤗
+
+More good news—restoring backups is now supported across
+**all installation methods!** 🎉
+
+Previously, only Home Assistant OS installations could restore backups. But
+with this release, this feature is now available for all installation methods!
+No matter how you run Home Assistant, even if you use our containers in a Docker
+environment, you can now restore your Home Assistant backups.
+
+This also means you can restore backups from local storage, Home Assistant
+Cloud, or any future backup locations added through integrations.
+
+As a matter of fact, all backup features, including everything we release today,
+will be available regardless of the installation method you are using. We want
+everyone to have a solid backup strategy.
 
 ### Backup retention 🗑
 
-Our previous backup system would just make backups, which was good, but...
-eventually you'd annoyingly run out of disk space. 😬
+Our previous backup system made solid backups, which was good, but if you didn't
+clean them up manually, eventually, you'd annoyingly run out of disk space. 😬
 
 So! Backup retention is now a thing! You can now configure how many backups you
-want to keep, and the system will automatically clean up old backups for you.
+want to keep, and Home Assistant will handle the rest.
 
-<img class="no-shadow" alt="You can now configure a retention policy for your backups, allowing Home Assistant to clean it up automatically" src="/images/blog/2025-01/temp-backup-retention.png" />
+<img class="no-shadow" alt="You can now configure a retention policy for your backups, allowing Home Assistant to clean it up automatically" src="/images/blog/2025-01/backups-retention.png" />
+
+This cleanup will happen automatically after each backup. If you create a backup
+manually, for whatever reason, those will remain untouched, giving you full
+control over special cases and workflows.
 
 ### Setting up backups for the first time 🚀
 
-When you navigate to the backup settings for the first time after upgrading
-to this release, you will be greeted with a new setup wizard that will guide
-you through the process of setting up your backups in the new system.
+Getting started with the new backup system is quick and easy!
+
+The first time you open the backup settings after upgrading, you will be greeted
+by a **setup wizard** that will guide you through setting up your backups
+step-by-step.
+
+<img class="no-shadow" alt="Screenshot of the our friendly wizard that will help you setting up your backups" src="/images/blog/2025-01/backups-wizard.png" />
 
 The wizard will help you set up your encryption key, configure your backup
 frequency, and set up your backup retention policy. And when it is ready, it
 will immediately kick off your first backup!
 
 All set! One less thing to worry about 🎉
+
+### Time to get serious about backups
+
+We are super excited about this new backup system! As we enter the new year,
+we encourage you to get serious about your backups.
+A good New Year’s resolution, maybe? 😉
+
+So, stop what you are doing right now and set up your backups! Go ahead and set
+up that 3-2-1 backup strategy. Not sure what that is?
+
+**You can read all about it in our [Time to get serious about backups blog post](/blog/2025/01/06/time-to-get-serious-about-backups/)**
 
 ## Month of "What the Heck?!"
 
@@ -258,7 +342,7 @@ keyboard.
 
 <img class="no-shadow" alt="If you press the d on your keyboard, it will pop up the Quickbar for devices." src="/images/blog/2025-01/391675502-36f624b7-786f-486b-89a6-e86bc0a5f9fc.png"/>
 
-## Zooom & Pan for charts
+### Zoom & Pan for charts
 
 KNXBroker raised the the following WTH topic:
 
