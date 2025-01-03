@@ -637,9 +637,9 @@ silently dropped.
 {% details "devolo Home Control" %}
 
 The integration with devolo Home Control has been updated to remove the option
-to set the mydevolo URL. This option was used to set up the integration with
-the devolo Home Control Cloud for development purposes only. This option is no
-longer available.
+to set the mydevolo URL. This option was used to integrate with the devolo
+Home Control Cloud for development purposes only.
+This option is no longer available.
 
 ([@Shutgun] - [#132821]) ([documentation](/integrations/devolo_home_control))
 
@@ -692,7 +692,7 @@ actions. Please use `color_temp_kelvin` instead.
 {% details "Tesla Fleet" %}
 
 The included OAuth application credentials have been removed, as Tesla no longer
-supports Open Source application registrations, and is moving to a pay-per-use
+supports Open Source application registrations and is moving to a pay-per-use
 model.
 
 Read more about this announcement in this [blog post](https://developer.tesla.com/docs/fleet-api/announcements#2024-11-27-pay-per-use-pricing).
