@@ -112,7 +112,8 @@ Enjoy the release!
 
 Let’s talk about backups. Let’s be honest: they’re one of the most important yet
 often overlooked tasks. But when disaster strikes, like a hardware failure,
-having a reliable backup can save the day. Wouldn't you love to be back up and running after disaster strikes?
+having a reliable backup can save the day. Wouldn't you love to be back up and
+running after disaster strikes?
 
 While Home Assistant's previous backup system has proven to be solid
 and reliable over the years, it didn't exactly make following best
@@ -147,7 +148,9 @@ greeted with a new overview page that shows you exactly when your last backup
 took place and when the next one is scheduled. Instant peace of mind!
 
 Automated backups are taking place at 4:45 AM. So, while everyone in your home
-is sleeping, Home Assistant makes sure your data is safe and sound. Backing up at this early hour also means Home Assistant is done with its internal database maintenance, ensuring your backup is as compact as possible.
+is sleeping, Home Assistant makes sure your data is safe and sound. Backing up
+at this early hour also means Home Assistant is done with its internal database
+maintenance, ensuring your backup is as compact as possible.
 
 If something ever goes wrong during the automated scheduled backup process,
 Home Assistant will notify you through the repair center, ensuring you are
@@ -165,9 +168,10 @@ configuration as your scheduled automated backups.
 
 <img class="no-shadow" alt="Screenshot showing the backup now button + dialog that allows you to trigger an off-schedule backup at any time" src="/images/blog/2025-01/backups-backup-now.png" />
 
-The ability to trigger an on-demand automated backup is excellent, as it covers all your backup settings in a single click. However, the ability to create manual
-backups also still exists. This allows you to create a very specific backup with
-the exact contents you want to have in it.
+The ability to trigger an on-demand automated backup is excellent, as it covers
+all your backup settings in a single click. However, the ability to create
+manual backups also still exists. This allows you to create a very specific
+backup with the exact contents you want to have in it.
 
 ### Home Assistant Cloud backups 😎
 
@@ -181,9 +185,9 @@ encrypted off-site protection for your data! 🎁**
 <img class="no-shadow" alt="Home Assistant Cloud is now a backup target location, that is included with the Home Assistant Cloud subscription at no additional costs" src="/images/blog/2025-01/backups-home-assistant-cloud.png" />
 
 The backup can be downloaded from Home Assistant itself, but also from the
-[Home Assistant Cloud account page](https://account.nabucasa.com/) @ Nabu Casa in case you need it. This way,
-you can always access your latest backup, even in case your Home Assistant
-hardware completely fails.
+[Home Assistant Cloud account page](https://account.nabucasa.com/) @ Nabu Casa
+in case you need it. This way, you can always access your latest backup, even
+in case your Home Assistant hardware completely fails.
 
 [Home Assistant Cloud by Nabu Casa]: https://www.nabucasa.com/
 
@@ -202,7 +206,8 @@ Google Drive, Backblaze B2, or other storage providers—in the future.
 <img class="no-shadow" alt="Screenshot showing an potential example storage provider provided by an integration" src="/images/blog/2025-01/backups-integration-location.png" />
 
 Currently, this feature is brand new ✨, so **no** integrations offer additional
-locations yet. However, we expect to see a few more integrations that provide backup locations in the next release.
+locations yet. However, we expect to see a few more integrations that provide
+backup locations in the next release.
 
 This extensibility ensures you can store your backups where you want them,
 giving you the flexibility and choice to choose the storage solution you
@@ -212,9 +217,13 @@ prefer and trust.
 
 With the addition of Home Assistant Cloud as an off-site backup location, and
 the potential for integrations to offer even more (off-site) backup locations,
-security has become more important than ever. Your backups not only contain the access credentials to your smart home devices but also the history of your home, and no one should be able to access information that sensitive! **Ever!**
+security has become more important than ever. Your backups not only contain the
+access credentials to your smart home devices but also the history of your home,
+and no one should be able to access information that sensitive! **Ever!**
 
-That is why all backups are now AES-128  encrypted by default. To prioritize your backups’ security we replaced the previous optional password with a mandatory encryption key.
+That is why all backups are now [AES-128] encrypted by default. To prioritize
+your backups’ security we replaced the previous optional password
+with a mandatory encryption key.
 
 <img class="no-shadow" alt="The new backup overview page shows you exactly when your last backup took place" src="/images/blog/2025-01/backups-encryption.png" />
 
