@@ -354,7 +354,7 @@ Thanks to [@MindFreeze], you can now zoom and pan in any graph
 in Home Assistant! 📈
 
 <p class="img">
-<img class="no-shadow" alt="Zoom any graph in Home Assistant, by holding ctrl or command and scroll your mouse wheel!" src="/images/blog/2025-01/temp-zoom-graphs.gif"/>
+<img class="no-shadow" alt="Zoom any graph in Home Assistant, by holding ctrl or command and scroll your mouse wheel!" src="/images/blog/2025-01/wth-zoom-graphs.gif"/>
 Zoom any drag any graph in Home Assistant, by holding ctrl (or command on mac)
 and scroll your mouse wheel!
 </p>
