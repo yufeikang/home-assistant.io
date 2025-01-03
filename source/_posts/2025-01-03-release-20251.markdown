@@ -91,11 +91,10 @@ Enjoy the release!
   - [Setting up backups for the first time 🚀](#setting-up-backups-for-the-first-time-)
   - [Time to get serious about backups 🫵](#time-to-get-serious-about-backups-)
 - [Month of "What the Heck?!"](#month-of-what-the-heck)
-  - [Setting category and labels when creating automations and scripts](#setting-category-and-labels-when-creating-automations-and-scripts)
+  - [Setting categories and labels when creating automations and scripts](#setting-categories-and-labels-when-creating-automations-and-scripts)
   - [Quickly navigate to a device](#quickly-navigate-to-a-device)
   - [Zoom \& Pan for charts](#zoom--pan-for-charts)
   - [Controlling the default exposure of new entities to Assist](#controlling-the-default-exposure-of-new-entities-to-assist)
-  - [Reordering individual devices on the energy dashboard](#reordering-individual-devices-on-the-energy-dashboard)
   - [More "What the Heck?!" improvements](#more-what-the-heck-improvements)
 - [Integrations](#integrations)
   - [New integrations](#new-integrations)
@@ -298,72 +297,73 @@ up that 3-2-1 backup strategy. Not sure what that is?
 
 ## Month of "What the Heck?!"
 
-We had the Month of "What the Heck?!" in December, and it was a blast! 🎉
-Thanks to all the contributors who participated in this event, raising all
-your "What the Heck?!" moments with Home Assistant.
+December’s **[Month of “What the Heck?!”](/blog/2024/11/30/the-month-of-what-the-heck/)**
+was an absolute blast! 🎉
 
-All input from it is very valuable to us, and we are working on using it to
-shape the future of Home Assistant, for example, by determining what areas
-impact our roadmaps and priorities.
+A big thank you to everyone who contributed by sharing their “What the Heck?!”
+moments and ideas for improving Home Assistant. Your input is incredibly
+valuable and helps shape our roadmap and priorities moving forward.
 
-Besides that, quite a bunch of shared "What the Heck?!" moments have been
-addressed in this release already 🚀
+Quite a bunch of shared "What the Heck?!" moments have been addressed in this
+release already 🚀 —and we’re not stopping there! Expect to see even more
+improvements inspired by your feedback in upcoming releases.
 
-While the month is over, the work is not! We expect to see many more results
-from this month over the upcoming releases.
-
-### Setting category and labels when creating automations and scripts
+### Setting categories and labels when creating automations and scripts
 
 For the first WTH item that has been resolved, we have [@jpbede] to thank!
-And this one, is one of the higher voted ones as well, so it is a good one!
+And this one is also one of the higher-voted ones, so it is a good one! 
 Andrew Jackson wrote:
 
 [_**"WTH can you not add categories, labels etc when creating an automation"**_](https://community.home-assistant.io/t/wth-can-you-not-add-categories-labels-etc-when-creating-an-automation/802562)
 
-Yeah, that is a good WTH! Every time you create a new automation or script,
-you probably want to organize it right away, and not having to go back to
-the settings to do so. **FIXED**! 🎉
+Yeah, that is a good WTH! Whenever you create a new automation or script, you
+probably want to organize it right away and not have to go back to the settings.
+**FIXED**! 🎉
 
-<img class="no-shadow" alt="If you press the d on your keyboard, it will pop up the Quickbar for devices." src="/images/blog/2025-01/temp-new-automation-labels.png" />
+<img class="no-shadow" alt="If you press the d on your keyboard, it will pop up the Quickbar for devices" src="/images/blog/2025-01/wth-category-labels-new-automation.png" />
 
 When you create a new automation or script, and also when renaming it,
-you can now set the category and labels right away! 🏷️ Nice!
+you can now set the description, category, labels, and areas right away!
+🏷️ Nice!
 
 ### Quickly navigate to a device
 
-You might be aware, that you can bring up our quick navigation bar anywhere in
-Home Assistant, by pressing the `c` key on your keyboard to navigate to various
-places and the `e` key to search and navigate to any entity. However...
+You might be aware that you can bring up our quick navigation bar anywhere in
+Home Assistant by pressing the `c` key on your keyboard to navigate various
+places and the `e` key to search and navigate to any entity. However…
 
 [_**"WTH is there no quick bar for devices?"**_](https://community.home-assistant.io/t/wth-is-there-no-quick-bar-for-devices/802310)
 
 Well, that is a good question that Andreas Brett raised! There is indeed no
-such thing for devices. [@jpbede] to the rescue! As of this release, you
-can navigate to any device using the quickbar by pressing the `d` key on your
-keyboard.
+such thing for devices. [@jpbede] to the rescue! You can now navigate to any
+device using the quick bar by pressing the `d` key on your keyboard.
 
-<img class="no-shadow" alt="If you press the d on your keyboard, it will pop up the Quickbar for devices." src="/images/blog/2025-01/391675502-36f624b7-786f-486b-89a6-e86bc0a5f9fc.png"/>
+<img class="no-shadow" alt="If you press the d on your keyboard, it will pop up the quick bar for devices" src="/images/blog/2025-01/wth-quickbar-devices.png"/>
 
 ### Zoom & Pan for charts
 
-KNXBroker raised the the following WTH topic:
+KNXBroker raised the following WTH topic:
 
 [_**"WTH lets upgrade History Graphs"**_](https://community.home-assistant.io/t/wth-lets-upgrade-history-graphs/802568)
 
-You are right! The history graphs in Home Assistant are a bit basic but
-functional! Nevertheless, we can do better! 🚀
+You are right! The history graphs in Home Assistant are basic but functional!
+Nevertheless, we can do better! 🚀
 
-One of the bigger items in that WTH topic, was the ability to zoom and pan...
-Well, thanks to [@MindFreeze], you can now zoom and pan in any graph in Home
-Assistant! 📈
+One of the bigger items in that WTH topic was the ability to zoom and pan...
+Thanks to [@MindFreeze], you can now zoom and pan in any graph
+in Home Assistant! 📈
 
+<p class="img">
 <img class="no-shadow" alt="Zoom any graph in Home Assistant, by holding ctrl or command and scroll your mouse wheel!" src="/images/blog/2025-01/temp-zoom-graphs.gif"/>
+Zoom any drag any graph in Home Assistant, by holding ctrl (or command on mac)
+and scroll your mouse wheel!
+</p>
 
-Hold control (or command on macOS) and scroll to zoom in and out using your
-mouse. You can also click and drag to pan around the zoomed graph.
+Hold the control key (or command on macOS) and scroll to zoom in and out using
+your mouse. You can also click and drag to pan around the zoomed graph.
 
-Besides this change, [@MindFreeze] enabled small micro-animation for the
-history graphs, making them look a bit more alive and less static.
+In addition to this change, [@MindFreeze] enabled small micro-animation for the
+history graphs, making them look more alive and less static.
 
 [@MindFreeze]: https://github.com/MindFreeze
 
@@ -377,50 +377,47 @@ We hear you! Thanks to [@jpbede], you can now control the default exposure of
 new entities to Assist. You can now toggle this on or off in the Home Assistant
 Voice Assistant settings.
 
-<img class="no-shadow" alt="Zoom any graph in Home Assistant, by holding ctrl or command and scroll your mouse wheel!" src="/images/blog/2025-01/temp-assist-expose-default.png" />
+<img class="no-shadow" alt="Zoom any graph in Home Assistant, by holding ctrl or command and scroll your mouse wheel!" src="/images/blog/2025-01/wth-default-expose-to-assist.png" />
 
-### Reordering individual devices on the energy dashboard
+### More "What the Heck?!" improvements
+
+Many smaller improvements originate from the Month of “What the Heck?!” in this
+release. Here are some of the other noteworthy ones:
+
+[_**"WTH there is no hotkey for Assist"**_](https://community.home-assistant.io/t/wth-there-is-no-hotkey-for-assist/802403)**
+
+Well, thanks to [@jpbede], you can now press the `a` key on your keyboard
+anywhere in Home Assistant to summon Assist! 🎙️ Nice!
+
+[_**"WTH doesn't HA ask if I want to save automations?"**_](https://community.home-assistant.io/t/wth-doesnt-ha-ask-if-i-want-to-save-automations/804030)
+
+Whoa! That is a good one! Thanks to [@jpbede], Home Assistant will now ask if
+you want to save your automation before leaving the editor if there are unsaved
+changes. 🤖
 
 [_**"WTH Is in Energy Dashboard the individual devices not able to reorder"**_](https://community.home-assistant.io/t/wth-is-in-energy-dashboard-the-individual-devices-not-able-to-reorder/805051)
 
 Thanks for that one yormedia! Honestly, this one has been raised in previous
-editions of the Month of "What the Heck?!" a few times as well. Reason enough
-for [@karwosts] to pick this up and make it happen! You can now reorder the
-individual devices on the energy dashboard! 🔡
-
-<img class="no-shadow" alt="If you press the d on your keyboard, it will pop up the Quickbar for devices." src="/images/blog/2025-01/temp-sortable-devices.gif"/>
-
-### More "What the Heck?!" improvements
-
-There are many more smaller improvements originating from the Month of "What the
-Heck?!" in this release. Here are some of the other noteworthy ones:
-
-[_**"WTH there is no hotkey for Assist"**_](https://community.home-assistant.io/t/wth-there-is-no-hotkey-for-assist/802403)**
-
-Well, thanks to [@jpbede] you can now press the `a` on your keyboard anywhere
-in Home Assistant to summon Assist! 🎙️ Nice!
-
-[_**"WTH doesn't HA ask if I want to save automations?"**_](https://community.home-assistant.io/t/wth-doesnt-ha-ask-if-i-want-to-save-automations/804030)
-
-Whoa! That is a good one! Thanks to [@jpbede], Home Assistant will now ask you
-if you want to save your automation before leaving the editor if there are
-unsaved changes. 🤖
+editions of the Month of "What the Heck?!" a few times. Reason enough for
+[@karwosts] to pick this up and make it happen! You can now reorder them in
+the setting for categorization purposes. 🔡
 
 [_**"WTH Can't I filter labels within a table filter?"**_](https://community.home-assistant.io/t/wth-cant-i-filter-labels-within-a-table-filter/802529)
 
 Good question. If you have a lot of labels, scrolling through the list of labels
-in the filter option, can be a bit cumbersome. Thanks to [@silamon], you can
+in the filter option can be a bit cumbersome. Thanks to [@silamon], you can
 now search and filter through the labels in the filter option! 🔎
 
 [_**WTH sentence trigger doesn't contain any context**_](https://community.home-assistant.io/t/wth-sentence-trigger-doesnt-contain-any-context/802386)
 
 Great idea! Thanks to [@balloob], the full conversation input is now available
-to sentence triggers! 🗣️ This was actually the first WTH item to be resolved
+to sentence triggers! 🗣️ This was actually the first WTH item to be resolved in
 this edition! 😎
 
 [@balloob]: https://github.com/balloob
-[@silamon]: https://github.com/silamon
 [@jpbede]: https://github.com/jpbede
+[@karwosts]: https://github.com/karwosts
+[@silamon]: https://github.com/silamon
 
 ## Integrations
 
