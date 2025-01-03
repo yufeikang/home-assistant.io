@@ -497,14 +497,14 @@ of this release:
 ## Other noteworthy changes
 
 There are many more improvements in this release; here are some of the other
-noteworthy changes this release:
+noteworthy changes:
 
 - When viewing data tables and using `ctrl+f` in your browser to search, the
   search input will now be focused automatically. As native browser searches
   will not work on data tables. Thanks [@jpbede]!
-- [@marcinbauer85] adjust the "Add card" dialog, to automatically focus on the
-  search field when you add a card and can start typing to search right
-  away! Nice touch!
+- [@marcinbauer85] adjusted the "Add card" dialog, to automatically focus on the
+  search field when you add a card, so you can start typing to search
+  right away! Nice touch!
 - Images uploaded through Home Assistant (for example, as background or as a
   user profile picture) are now browsable in the media browser.
   Thanks [@karwosts]!
