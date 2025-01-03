@@ -471,29 +471,36 @@ It is not just new {% term integrations %} that have been added; existing
 integrations are also being constantly improved. Here are some of the noteworthy
 changes to existing integrations:
 
-- Palazzetti power control ([@dotvav] - [#131833]) ([palazzetti docs]) (new-platform)
-- Add Starlink consumption sensors ([@davidrapan] - [#132262]) ([starlink docs])
-- Add Starlink usage sensors ([@davidrapan] - [#132738]) ([starlink docs])
-- Add basic UniFi Protect AiPort support ([@RaHehl] - [#133523]) ([unifiprotect docs])
-- Add initial support for SwitchBot relay switch ([@greyeee] - [#130863]) ([switchbot docs])
-- Add additional Hitachi sensors to Overkiz ([@iMicknl] - [#133772]) ([overkiz docs])
-- Add binary states for Weheat indoor unit ([@barryvdh] - [#133811]) ([weheat docs]) (new-platform)
-- Add get_user_keyring_info service to UniFi Protect integration ([@RaHehl] - [#133138]) ([unifiprotect docs])
-- Add media browsing to Cambridge Audio ([@noahhusby] - [#129106]) ([cambridge_audio docs])
-- Add camera platform to tplink integration ([@sdb9696] - [#129180]) ([tplink docs])
-- Add Switchbot Water Leak Detector (BLE) ([@luc-ass] - [#133799]) ([switchbot docs])
-- Add actions with response values to Music Assistant ([@marcelveldt] - [#133521]) ([music_assistant docs])
+- The [TP-Link Smart Home] now has support for cameras! Nice work [@sdb9696]!
+- [@RaHehl] added [UniFi Protect AI Port] support to the
+  [UniFi Protect integration]. Awesome!
+- The [Music Assistant integration] now has support for actions with response
+  values from you [Music Assistant]. Thanks, [@marcelveldt]!
+- The [Cambridge Audio] integration now supports media browsing!
+  Thanks, [@noahhusby]!
+- [@dotav] added the ability to control the combustion power of your
+  [Palazzetti] pellet stove. Nice!
+- The [SwitchBot Bluetooth integration] now supports the SwitchBot Water Leak
+  Detector and relay switch. Good work, [@luc-ass] and [@greyeee]!
+- [@davidrapan] has been working on the [Starlink integration], adding sensors
+  reporting power, energy, and data usage. Nice!
 
-{% details "Potential changes to process" icon="mdi:scale-balance" %}
-
-Processed up to _#132149.
-
-- The [Lorem ipsum] integration now supports slipsum! Thanks [@frenck]!
-
-[@frenck]: https://github.com/frenck
-[Lorem ipsum]: /integrations/lorem_ipsum
-
-{% enddetails %}
+[@davidrapan]: https://github.com/davidrapan
+[@dotav]: https://github.com/dotav
+[@greyeee]: https://github.com/greyeee
+[@luc-ass]: https://github.com/luc-ass
+[@marcelveldt]: https://github.com/marcelveldt
+[@noahhusby]: https://github.com/noahhusby
+[@RaHehl]: https://github.com/RaHehl
+[@sdb9696]: https://github.com/sdb9696
+[Cambridge Audio]: /integrations/cambridge_audio
+[Music Assistant integration]: /integrations/music_assistant
+[Music Assistant]: https://music-assistant.io/
+[Palazzetti]: /integrations/palazzetti
+[SwitchBot Bluetooth integration]: /integrations/switchbot
+[TP-Link Smart Home]: /integrations/tplink
+[UniFi Protect AI Port]: https://store.ui.com/us/en/products/up-ai-port
+[UniFi Protect integration]: /integrations/unifiprotect
 
 ### Now available to set up from the UI
 
