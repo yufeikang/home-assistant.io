@@ -176,7 +176,7 @@ the exact contents you want to have in it.
 
 ### Home Assistant Cloud backups 😎
 
-Are you a Home Assistant Cloud by Nabu Casa subscriber? Then you're in for a
+Are you a [Home Assistant Cloud by Nabu Casa] subscriber? Then you're in for a
 treat! You can now automatically store your latest, fully encrypted, backup in
 your Home Assistant Cloud account.
 
@@ -189,6 +189,8 @@ The backup can be downloaded from Home Assistant itself, but also from the
 Home Assistant Cloud account page @ Nabu Casa in case you need it. This way,
 you can always access your latest backup, even in case you Home Assistant
 hardware failed completely.
+
+[Home Assistant Cloud by Nabu Casa]: https://www.nabucasa.com/
 
 ### Backup locations are extendable by design 🧩
 
