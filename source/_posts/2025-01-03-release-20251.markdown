@@ -197,7 +197,7 @@ it to restore your backups. To make this easier, you can download the key as
 part of an emergency kit during setup—or anytime later from the backup settings
 page. Keep it safe! 🔑
 
-[AES-128]: https://nl.wikipedia.org/wiki/Advanced_Encryption_Standard
+[AES-128]: https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
 
 ### Restoring backups available to all installation methods 🤗
 
@@ -317,7 +317,7 @@ in Home Assistant! 📈
 
 <p class="img">
 <img class="no-shadow" alt="Zoom any graph in Home Assistant, by holding ctrl or command and scroll your mouse wheel!" src="/images/blog/2025-01/wth-zoom-graphs.gif"/>
-Zoom any drag any graph in Home Assistant, by holding ctrl (or command on mac)
+Zoom and drag any graph in Home Assistant, by holding ctrl (or command on mac)
 and scroll your mouse wheel!
 </p>
 
@@ -439,7 +439,7 @@ changes to existing integrations:
 - [@RaHehl] added [UniFi Protect AI Port] support to the
   [UniFi Protect integration]. Awesome!
 - The [Music Assistant integration] now has support for actions with response
-  values from you [Music Assistant]. Thanks, [@marcelveldt]!
+  values from your [Music Assistant]. Thanks, [@marcelveldt]!
 - The [Cambridge Audio] integration now supports media browsing!
   Thanks, [@noahhusby]!
 - [@dotav] added the ability to control the combustion power of your
@@ -461,6 +461,7 @@ changes to existing integrations:
 [Music Assistant integration]: /integrations/music_assistant
 [Music Assistant]: https://music-assistant.io/
 [Palazzetti]: /integrations/palazzetti
+[Starlink integration]: /integrations/starlink
 [SwitchBot Bluetooth integration]: /integrations/switchbot
 [TP-Link Smart Home]: /integrations/tplink
 [UniFi Protect AI Port]: https://store.ui.com/us/en/products/up-ai-port
