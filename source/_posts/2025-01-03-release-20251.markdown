@@ -560,14 +560,14 @@ noteworthy changes this release:
 
 ## Dashboard background settings
 
-A few releases ago, we made it easier to add a background image to your
-dashboard. This release, [@silamon] takes it a step further by adding
-a lot of settings to customize how the background image is displayed.
+A few releases ago, we made adding a background image to your dashboard easier.
+This release, [@silamon] takes it a step further by adding a lot of settings
+to customize how the background image is displayed.
 
 This includes support for tiled backgrounds, transparency, size settings,
 alignment, and allowing the background to scroll with the page or stay fixed.
 
-_**TODO**: Add screenshot_
+<img class="no-shadow" alt="You can now fully customize the background of your dashboard, with the options to changing tiling, transparency, alignment, and size seettings" src="/images/blog/2025-01/dashboards-background-settings.png" />
 
 Nice! Thanks, [@silamon]!
 
