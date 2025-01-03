@@ -157,7 +157,7 @@ in case your Home Assistant hardware completely fails.
 
 ### Backup locations are extendable by design 🧩
 
-So, automated backup can be stored on your local disk and Home Assistant
+So, automated backups can be stored on your local disk and in Home Assistant
 Cloud, but what if you want to store your backups somewhere else?
 
 Choice is an important aspect of Home Assistant; we want to make everything as
@@ -316,9 +316,9 @@ Thanks to [@MindFreeze], you can now zoom and pan in any graph
 in Home Assistant! 📈
 
 <p class="img">
-<img class="no-shadow" alt="Zoom any graph in Home Assistant, by holding ctrl or command and scroll your mouse wheel!" src="/images/blog/2025-01/wth-zoom-graphs.gif"/>
+<img class="no-shadow" alt="Zoom any graph in Home Assistant, by holding ctrl or command and scrolling your mouse wheel!" src="/images/blog/2025-01/wth-zoom-graphs.gif"/>
 Zoom and drag any graph in Home Assistant, by holding ctrl (or command on mac)
-and scroll your mouse wheel!
+and scrolling your mouse wheel!
 </p>
 
 Hold the control key (or command on macOS) and scroll to zoom in and out using
