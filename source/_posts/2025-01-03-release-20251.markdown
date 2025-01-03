@@ -431,13 +431,13 @@ We welcome the following new integrations in this release:
 - **[Cookidoo]**, added by [@miaucl]  
   Interact with your shopping lists of [Cookidoo the official Thermomix recipe platform].
 - **[EHEIM Digital]**, added by [@autinerd]  
-  Control with your [EHEIM Digital aquarium devices] from Home Assistant.
+  Control your [EHEIM Digital aquarium devices] with Home Assistant.
 - **[Ituran]**, added by [@shmuelzon]  
   Retrieve and use information from your Ituran-equipped vehicle.
 - **[Ohme]**, added by [@dan-r]  
   Get sensor information from your Ohme smart EV charger.
 - **[Peblar]**, added by [@frenck]  
-  Control and monitor charging sessions of your [Peblar EV Charger].
+  Control and monitor the charging sessions of your [Peblar EV Charger].
 - **[Powerfox]**, added by [@klaasnicolaas]  
   Gather data from your [Poweropti] devices reading electricity, water, gas, and heat.
 - **[Slide Local]**, added by [@dontinelli]  
