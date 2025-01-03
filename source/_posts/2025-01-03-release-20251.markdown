@@ -82,14 +82,14 @@ Enjoy the release!
 
 - [Overhaul of the backup system](#overhaul-of-the-backup-system)
   - [Automated backups 🤖](#automated-backups-)
-  - [Triggering an off-schedule automated backup](#triggering-an-off-schedule-automated-backup)
+  - [Triggering an off-schedule automated backup 👆](#triggering-an-off-schedule-automated-backup-)
   - [Home Assistant Cloud backups 😎](#home-assistant-cloud-backups-)
   - [Backup locations are extendable by design 🧩](#backup-locations-are-extendable-by-design-)
   - [Encrypted backups by default 🔒](#encrypted-backups-by-default-)
   - [Restoring backups available to all installation methods 🤗](#restoring-backups-available-to-all-installation-methods-)
   - [Backup retention 🗑](#backup-retention-)
   - [Setting up backups for the first time 🚀](#setting-up-backups-for-the-first-time-)
-  - [Time to get serious about backups](#time-to-get-serious-about-backups)
+  - [Time to get serious about backups 🫵](#time-to-get-serious-about-backups-)
 - [Month of "What the Heck?!"](#month-of-what-the-heck)
   - [Setting category and labels when creating automations and scripts](#setting-category-and-labels-when-creating-automations-and-scripts)
   - [Quickly navigate to a device](#quickly-navigate-to-a-device)
@@ -157,11 +157,11 @@ If something ever goes wrong during the automated scheduled backup process,
 Home Assistant will notify you through the repair center, ensuring you are
 aware of it and can take action.
 
-### Triggering an off-schedule automated backup
+### Triggering an off-schedule automated backup 👆
 
 Automated backups on a schedule are great, but sometimes, you might want to
-trigger a backup right now! Maybe you are about to make big changes or upgrade
-a whole bunch of things during an evening of tinkering.
+trigger a backup **right now**! Maybe you are about to make big changes or
+upgrade a whole bunch of things during an evening of tinkering.
 
 No worries! You can now trigger an off-schedule automated backup from the backup
 page at any time. This will immediately create a backup with the same
@@ -169,8 +169,8 @@ configuration as your scheduled automated backups.
 
 <img class="no-shadow" alt="Screenshot showing the backup now button + dialog that allows you to trigger an off-schedule backup at any time" src="/images/blog/2025-01/backups-backup-now.png" />
 
-The ability to trigger an off-schedule regular backup is excellent, as it covers
-everything you have in a single go. However, the ability to create manual
+The ability to trigger an off-schedule automated backup is excellent, as it
+covers everything you have in a single go. However, the ability to create manual
 backups also still exists. This allows you to create a very specific backup with
 the exact contents you want to have in it.
 
@@ -285,7 +285,7 @@ will immediately kick off your first backup!
 
 All set! One less thing to worry about 🎉
 
-### Time to get serious about backups
+### Time to get serious about backups 🫵
 
 We are super excited about this new backup system! As we enter the new year,
 we encourage you to get serious about your backups.
