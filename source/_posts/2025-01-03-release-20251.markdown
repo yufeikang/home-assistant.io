@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "2025.1: Beta release notes"
-description: "Beta release notes for Home Assistant 2025.1"
+title: "2025.1: Backing Up into 2025!"
+description: "A complete overhaul of the backup system, including Home Assistant Cloud backup storage, retention policies, and fully extendable by integrations. Lots of Month of 'What the Heck?!' improvements, new integrations, and more!"
 date: 2025-01-03 00:00:00
 date_formatted: "January 3, 2025"
 author: Franck Nijhof
@@ -15,64 +15,28 @@ og_image: /images/blog/2025-01/social.jpg
 
 <lite-youtube videoid="qCd7RHprmc0" videotitle="Home Assistant 2025.1 Release Party"></lite-youtube>
 
-{% note %}
-
-**Welcome to the beta release notes for Home Assistant 2025.1** 🎉
-
-<br />
-
-Please note that these release notes are a work in progress. 👷‍♀️ We will be
-completing them over the next couple of days. Not all features might be final
-yet, and some features _**may not** make it into the final release_.
-
-<br />
-
-**Want to help test the beta?** Awesome! ❤️ We have documented how you
-[can join our beta channel and install the beta here](/common-tasks/os/#running-a-beta-version).
-
-<br />
-
-While running the beta, we highly recommend joining our _#beta_ channel on
-the [Home Assistant Discord chat](/join-chat)! 💬 Most developers and beta
-testers are in this channel during the beta period to share experiences, ideas,
-and iterate over new features, fine-tuning them before the final release.
-It's a really fun place to hang out. 😎
-
-<br />
-
-**Reporting issues**: As this is a beta test, you might encounter unexpected
-behavior or issues. 🐞 We use the GitHub issue tracker to track beta issues.
-You can find our issue trackers and the reported issues during beta here:
-
-<br />
-
-- [Report(ed) beta **dashboards/UI/frontend** issues](https://github.com/home-assistant/frontend/milestone/127)
-- [Report(ed) beta **integrations/automations/backend/core** issues](https://github.com/home-assistant/core/milestone/711)
-- [Report(ed) beta **documentation** issues](https://github.com/home-assistant/home-assistant.io/milestone/134)
-
-🙏 When reporting issues, **make sure to mention the exact beta version you are
-running** in the issue description. This will help us identify and track the
-issue correctly. Read more about [reporting issues here](/help/reporting_issues/).
-
-<br />
-
-Issues introduced in the beta are processed with priority. 🔝
-
-{% endnote %}
-
-{% tip %}
-
-Don't forget to [join our release party live stream on YouTube](https://www.youtube.com/watch?v=qCd7RHprmc0)
-3 January 2025, at 20:00 GMT / 12:00 PT / 21:00 CET!
-
-{% endtip %}
-
 Home Assistant 2025.1! 🥂
 
-Happy New Year! I and the whole team wish you and your loved ones a fantastic
-and healthy 2025! ❤️
+Happy New Year! The whole Home Assistant project wishes you and your loved ones
+a fantastic and healthy 2025! ❤️ Let's make this year even better than the last!
 
-This year is starting with a bang! 
+We are all super excited to kick off the new year with an absolute **massive**
+release! 🎆
+
+This release brings a complete overhaul of the backup system in Home Assistant,
+which has been in the works for months! And I'm not just talking about some
+user interface changes—no, we are talking about a complete overhaul from front
+to back!
+
+Automated backups, encrypted Home Assistant Cloud backup storage, retention
+policies, configuration wizards, and even the ability for integrations to offer
+backup storage locations! 🤯
+
+But that is not all! We also had the [Month of “What the Heck?!”](/blog/2024/11/30/the-month-of-what-the-heck/)
+in December, which resulted in a lot of quality-of-life improvements raised
+by the community that month!
+
+There is so much to unwrap in this release, seriously, let's just dive in!
 
 Enjoy the release!
 
@@ -89,7 +53,7 @@ Enjoy the release!
   - [Restoring backups available to all installation methods 🤗](#restoring-backups-available-to-all-installation-methods-)
   - [Backup retention 🗑](#backup-retention-)
   - [Setting up backups for the first time 🚀](#setting-up-backups-for-the-first-time-)
-  - [Time to get serious about backups 🫵](#time-to-get-serious-about-backups-)
+  - [3…2…1… Backups 🎊](#321-backups-)
 - [Month of "What the Heck?!"](#month-of-what-the-heck)
   - [Setting categories and labels when creating automations and scripts](#setting-categories-and-labels-when-creating-automations-and-scripts)
   - [Quickly navigate to a device](#quickly-navigate-to-a-device)
