@@ -2,6 +2,7 @@
 title: FYTA
 description: Instructions on how to integrate FYTA sensors within Home Assistant.
 ha_category:
+  - Binary sensor
   - Sensor
 ha_release: 2024.4
 ha_iot_class: Cloud Polling
@@ -10,6 +11,7 @@ ha_codeowners:
   - '@dontinelli'
 ha_domain: fyta
 ha_platforms:
+  - binary_sensor
   - diagnostics
   - sensor
 ha_integration_type: hub
@@ -41,6 +43,19 @@ Password:
 The integration has no additional configuration options.
 
 ## Supported functionality
+
+### Binary sensors
+
+The following binary sensors are currently available per plant:
+
+- Low battery
+- Light notification
+- Nutrition notification
+- Temperature notification
+- Water notification
+- Productive plant
+- Repotted
+- Sensor update available
 
 ### Sensors
 
