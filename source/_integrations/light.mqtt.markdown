@@ -108,7 +108,7 @@ brightness_value_template:
   required: false
   type: template
 color_mode_state_topic:
-  description: "The MQTT topic subscribed to receive color mode updates. If this is not configured, `color_mode` will be automatically set according to the last received valid color or color temperature"
+  description: "The MQTT topic subscribed to receive color mode updates. If this is not configured, `color_mode` will be automatically set according to the last received valid color or color temperature. The unit used is mireds, or if `color_temp_kelvin` is set to `true`, in Kelvin."
   required: false
   type: string
 color_mode_value_template:
@@ -120,9 +120,14 @@ color_temp_command_template:
   required: false
   type: template
 color_temp_command_topic:
-  description: The MQTT topic to publish commands to change the light’s color temperature state. The color temperature command slider has a range of 153 to 500 mireds (micro reciprocal degrees).
+  description: The MQTT topic to publish commands to change the light’s color temperature state. By default the color temperature command slider has a range of 153 to 500 mireds (micro reciprocal degrees) or a range of 2000 to 6535 Kelvin if `color_temp_kelvin` is set to `true`.
   required: false
   type: string
+color_temp_kelvin:
+  description: "When set to `true`, `color_temp_command_topic` will publish color mode updates in Kelvin and process `color_temp_state_topic` will process state updates in Kelvin. When not set the `color_temp` values are converted to mireds."
+  required: false
+  type: boolean
+  default: false
 color_temp_state_topic:
   description: "The MQTT topic subscribed to receive color temperature state updates."
   required: false
@@ -257,10 +262,20 @@ json_attributes_topic:
   description: The MQTT topic subscribed to receive a JSON dictionary payload and then set as sensor attributes. Usage example can be found in [MQTT sensor](/integrations/sensor.mqtt/#json-attributes-topic-configuration) documentation.
   required: false
   type: string
+max_kelvin:
+  description: The maximum color temperature in Kelvin.
+  required: false
+  type: integer
+  default: 6535
 max_mireds:
   description: The maximum color temperature in mireds.
   required: false
   type: integer
+min_kelvin:
+  description: The minimum color temperature in Kelvin.
+  required: false
+  type: integer
+  default: 2000
 min_mireds:
   description: The minimum color temperature in mireds.
   required: false
