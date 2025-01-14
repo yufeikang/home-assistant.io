@@ -261,6 +261,19 @@ Use a transformation item from your Habitica character's inventory on a member o
 - **Seafoam**: `seafoam` (transforms into a starfish)
 - **Shiny seed** `shiny_seed` (transforms into flower)
 
+### Action `habitica.get_tasks`
+
+Fetch tasks from your Habitica account, with optional filters to narrow down the results for more precise task retrieval.
+
+| Data attribute | Optional | Description                                                                                              |
+| -------------- | -------- | -------------------------------------------------------------------------------------------------------- |
+| config_entry   | no       | Choose the Habitica character to retrieve tasks from.                                                    |
+| type           | yes      | Filter tasks by type.  Valid types: "habits", "dailies", "todos", "rewards".                                                                                     |
+| priority       | yes      | Filter tasks by difficulty. Valid values: "trivial", "easy", "medium", "hard".                                                                              |
+| task           | yes      | Select specific tasks by matching their name (or task ID).                                               |
+| tag            | yes      | Filter tasks that have one or more of the selected tags.                                                 |
+| keyword        | yes      | Filter tasks by keyword, searching across titles, notes, and checklists.                                 |
+
 ## Automations
 
 Get started with these automation examples for Habitica, each featuring ready-to-use blueprints!
