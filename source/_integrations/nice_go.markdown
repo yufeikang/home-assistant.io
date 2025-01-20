@@ -21,7 +21,10 @@ ha_platforms:
 ha_integration_type: hub
 ---
 
-The **Nice G.O.** {% term integration %} lets you control Nice G.O. garage doors through Home Assistant. Device names in Home Assistant are generated based on the names defined in your Nice G.O. mobile app.
+The **Nice G.O.** {% term integration %} is used to integrate with [Nice/Linear](https://linear-solutions.com/) and [Mighty Mule](https://mightymule.com/) products.
+This integration is used for garage doors and gate openers created by these companies.
+
+Device names in Home Assistant are generated based on the names defined in your Nice G.O. mobile app.
 
 ## Prerequisites
 
