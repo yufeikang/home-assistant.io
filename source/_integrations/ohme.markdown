@@ -13,8 +13,10 @@ ha_domain: ohme
 ha_platforms:
   - button
   - number
+  - select
   - sensor
   - switch
+  - time
 ha_quality_scale: silver
 ha_integration_type: device
 ---
@@ -61,6 +63,12 @@ The Ohme integration provides the following entities.
 
 - **Target percentage**
   - **Description**: Sets the charge target for your vehicle.
+  - **Available for devices**: all
+
+#### Selects
+
+- **Charger mode**
+  - **Description**: Sets the mode of the charger. Possible options: `Smart charge`, `Max charge`, `Paused`. This is only available with a vehicle plugged in.
   - **Available for devices**: all
 
 #### Sensors
