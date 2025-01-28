@@ -39,6 +39,7 @@ ha_platforms:
   - vacuum
 ha_dhcp: true
 ha_integration_type: integration
+ha_quality_scale: platinum
 ---
 
 The `tplink` integration allows you to control your [TP-Link Kasa Smart Home Devices](https://www.tp-link.com/kasa-smart/) and [TP-Link Tapo Devices](https://www.tapo.com/) such as cameras, doorbells, chimes, lights, plugs, wall switches, robot vacuums, hubs, and hub-attached devices.
