@@ -107,7 +107,7 @@ These are the entities available in the Teslemetry integration. Not all entities
 |Binary sensor|User present|Yes|
 |Binary sensor|Wiper heat|No|
 |Button|Flash lights|Yes|
-|Button|Homelink|Yes|
+|Button|HomeLink|Yes|
 |Button|Honk horn|Yes|
 |Button|Keyless driving|Yes|
 |Button|Play fart|Yes|
