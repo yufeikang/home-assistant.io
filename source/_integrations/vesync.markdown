@@ -71,6 +71,7 @@ This {% term integration %} supports devices controllable by the VeSync App.  Th
 - Vital 100S Smart True HEPA Air Purifier (LAP-V102S-WUS) 
 - Vital 200S Smart True HEPA Air Purifier (LAP-V201S-WUS)
 - LEVOIT Smart Wifi Air Purifier (LV-PUR131S)
+- LEVOIT Smart Tower Fan (LTF-F422S-WUS)
 
 ### Humidifiers
 
