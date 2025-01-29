@@ -41,7 +41,7 @@ serial_port:
   description: Path to the serial device
   required: false
   type: string
-  default: /dev/ttyS0
+  default: /dev/ttyS0 # Default value for Raspberry Pi
 {% endconfiguration %}
 
 ## Sensors
@@ -60,10 +60,8 @@ This integration creates the following sensor entities:
 
 If you experience connection issues:
 
-1. Verify your B-route ID and password are correct
-2. Check if the serial port path is correct
-3. Confirm your smart meter supports B-route functionality
-4. Check Home Assistant logs for detailed error messages
+1. Instructions for enabling debug logging
+2. Confirm your smart meter supports B-route functionality
 
 <div class='note'>
 
